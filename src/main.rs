@@ -710,29 +710,7 @@ impl SparseArray {
         }
     }
 
-    /*
-    fn append_01(&mut self, index: usize, value: i32) {
-        if self.finalized {
-            panic!("Sparse array has been finalized");
-        }
-
-        if index >= self.size {
-            panic!("Index out of bounds");
-        }
-
-        if value == 0 {
-            self.data.retain(|&(i, _)| i != index); // Remove any existing element at the given index
-        } else {
-            // Add or update the element at the given index
-            let index_value_pair = (index, value);
-            if let Some(existing_index) = self.data.iter().position(|&(i, _)| i == index) {
-                self.data[existing_index] = index_value_pair;
-            } else {
-                self.data.push(index_value_pair);
-            }
-        }
-    }
-    */
+    
 
     fn append(&mut self, index: usize, elem: String) {
         /*
@@ -769,19 +747,6 @@ impl SparseArray {
             .unwrap_or(0)
     }
 
-    /*
-    fn get_element(&self, index: usize) -> Option<String> {
-        if index >= self.size {
-            panic!("Index out of bounds");
-        }
-        self.elements
-            .iter()
-            .find(|&&(i, _)| i == index)
-            .map(|(_, v)| v.clone())
-
-            
-    }
-     */
 
     fn finalize(&mut self) -> RankSupport {
         self.finalized = true;
