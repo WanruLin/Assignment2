@@ -151,10 +151,39 @@ fn main() {
 
 
     println!("////////////////////////////////////////task3 end/////////////////////////////////////");
+    
+    
+    
+    println!("///////////////////////compare to the size when all 0s were stored as 'empty'///////////////////////");
+    let mut string_list: Vec<Vec<String>> = Vec::new();
+    for i in n.clone() {
+        for sp in 0..sparsity.len(){
+            let string = generate_elems(i*(sparsity[sp] as usize)/100);
+            string_list.push(string);
+        }
+    }
+    for i in 0..string_list.len() {
+        for _ in 0..(n[i/3]-string_list[i].len()){
+            let empty = "emp".to_string();
+            string_list[i].push(empty);
 
+        }
+    }
+    
+    let mut sparse_array_list2:Vec<SparseArray> = Vec::new();
 
+    for i in 0..data_list.len(){
+        let mut sparse_array = SparseArray::create(data_list[i].len());
+        sparse_array.data = (indice_data[i].clone()).into_iter().zip(data_list[i].clone()).collect();
+        sparse_array.elements = (indice_data[i].clone()).into_iter().zip(string_list[i].clone()).collect();
+        sparse_array_list2.push(sparse_array);
+    }
 
-   
+    for i in 0..sparse_array_list2.len() {
+        let size = sparse_array_list2[i].size();
+        println!(">>>>size is: {}",size);
+    }
+
 
 }
 
