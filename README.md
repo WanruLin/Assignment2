@@ -53,3 +53,8 @@ Within the `main` function, I implement the rank operation, select operation, an
 For the rank and select operation(task1 and task2), I randomly generate 100 bit vectors, whose size ranging from 100 to 10000, and I do the rank or select operation 100 times to evaluate the running time of the implementation. And I also evaluate the size of my `RankSupport` and `SelcetSupport` by implementing the `overhead()` method.
 
 For the evaluation of the implementation of sparse array(task3), I generated sparse arrays of a few different lengths (1000, 10000, 100000) and having various sparsity (1%, 5%, 10%). And I implemented `get_at_rank`, `get_at_index`, `get_index_of`, `num_elem_at` these 4 methods for 10 times to evaluate the running time of the implementation. Moreover, I evaluate the size of my `SparseArray` by implementing the `size()` method and compare it to the size when all of the 0 elements were instead explicitly stored as “empty” .
+
+
+### To run the code:
+
+To run the code, you can just simply type `cargo run` under the same directory in the terminal.
