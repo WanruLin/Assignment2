@@ -15,7 +15,7 @@ To implement a succinct, constant-time, bit-vector rank operation, I create the 
 
 To implement a succinct, (at most) log-time, bit-vector select operation, I create the struct `SelectSupport` and it can implement the following methods:
 
-- `select1(i)` : Returns the position, in the underlying bit-vector, of the FIRST index, j for which rank1(j) = 1.
+- `select1(i)` : Returns the position `i`, in the underlying bit-vector, of the FIRST index, `j` for which `rank1(j) = i`.
 - `overhead()` : Returns the size of the `SelectSupport` data structure (in bits) that is required to support log-time select on the current bitvector.
 - `save(fname)` : Saves the `SelectSupport` data structure for this bit vector to the file `fname`.
 - `load(fname)` : Loads the `SelectSupport` data structure for this bit vector from the file `fname`.
